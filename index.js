@@ -3,7 +3,7 @@ const hipchat = require('./hipchat')
 
 let server
 
-buildServer('https://071f1b78.ngrok.io')
+buildServer(process.env.JIMBO_PUBLIC_URL)
 .then(s => {
   server = s
 })

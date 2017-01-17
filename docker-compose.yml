@@ -1,0 +1,17 @@
+version: '2'
+services:
+  ngrok:
+    image: wernight/ngrok
+    ports:
+      - 4040
+    command: ngrok http jimbo:3000
+  jimbo:
+    image: jimbo
+    environment:
+      - "JIBOT_HOST=$JIBOT_HOST"
+      - "JIBOT_BASE_URL=$JIBOT_BASE_URL"
+      - "JIBOT_USERNAME=$JIBOT_USERNAME"
+      - "JIBOT_PASSWORD=$JIBOT_PASSWORD"
+    ports:
+      - 3000
+    command: bash docker-start.sh
