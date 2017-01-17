@@ -1,0 +1,20 @@
+<table>
+  <tr>
+    <td>{{type}}:</td>
+    <td>
+      <strong>{{key}}: {{summary}}</strong> <em>{{status}}</em>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">Description:</td>
+    <td>
+      {{#each descriptionLines}}
+      {{this}}<br>
+      {{/each}}
+    </td>
+  <tr>
+  <tr>
+    <td>Reported by:</td>
+    <td><em>{{reporter}}</em></td>
+  </tr>
+</table>

@@ -1,0 +1,31 @@
+{
+  "key": "{{name}}",
+  "name": "{{name}}",
+  "description": "Jimbo HipChat add-on",
+  "vendor": {
+    "name": "codyzu",
+    "url": "https://github.com/codyzu"
+  },
+  "links": {
+    "self": "{{localBaseUrl}}/descriptor.json",
+    "homepage": "{{localBaseUrl}}"
+  },
+  "capabilities": {
+    "hipchatApiConsumer": {
+      "scopes": [
+        "send_notification",
+        "view_room"
+      ]
+    },
+    "installable": {
+      "callbackUrl": "{{localBaseUrl}}/installable"
+    },
+    "webhook": {
+      "url": "{{localBaseUrl}}/message",
+      "pattern": "^/[jJ]imbo",
+      "event": "room_message",
+      "name": "jimbo message",
+      "authentication": "jwt"
+    }
+  }
+}
